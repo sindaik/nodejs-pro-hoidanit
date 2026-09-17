@@ -4,7 +4,7 @@ import { getAllUsers, handleCreateUser } from "services/user.services";
 const getHomePage = async (req: Request, res: Response) => {
     //get users
     const users = await getAllUsers();
-    console.log(">>> check users: ", users);
+    // console.log(">>> check users: ", users);
     return res.render("home", {
         users: users,
     });
@@ -19,4 +19,9 @@ const postCreateUser = async (req: Request, res: Response) => {
     await handleCreateUser(fullName, email, address);
     return res.redirect("/");
 };
-export { getHomePage, getCreateUserPage, postCreateUser };
+const postDeleteUser = async (req: Request, res: Response) => {
+    const { id } = req.params;
+    console.log(">>> check id:", req.params.id);
+    return res.redirect("/");
+};
+export { getHomePage, getCreateUserPage, postCreateUser, postDeleteUser };
