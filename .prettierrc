@@ -1,0 +1,15 @@
+{
+  "tabWidth": 4,
+  "printWidth": 1000,
+  "bracketSameLine": true,
+  "htmlWhitespaceSensitivity": "ignore",
+  "singleQuote": false,
+  "overrides": [
+    {
+      "files": "*.ejs",
+      "options": {
+        "parser": "html"
+      }
+    }
+  ]
+}
